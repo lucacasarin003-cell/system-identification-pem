@@ -40,7 +40,7 @@ y = sim(m0, [u en0]);
 data = iddata(y,u);
 
 % Model estimation
-%% PEM method
+% PEM method
 
 % Estimation of an ARX model
 
