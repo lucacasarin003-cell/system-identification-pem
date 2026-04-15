@@ -123,11 +123,11 @@ theta_hat_bj = m_bj.Report.Parameters.ParVector;
 
 % Frequency analysis
 % Plot Bode diagram
-figure;
+h = figure;
 bodeplot(m0, m_arx, m_armax, m_oe, m_bj);
 legend('True','ARX','ARMAX','OE','BJ');
 grid on;
-title('Bode Plot Comparison');
+title(['Bode Plot Comparison (N = ', num2str(N), ')']);
 
 % Statistical analysis
 y_raw = data.y;
