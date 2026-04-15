@@ -19,12 +19,11 @@ A dataset of $N = 8000$ samples is generated using a known discrete-time model.
 The input signal is a multi-sine excitation generated using MATLAB `idinput`.
 Noise is modeled as white Gaussian noise with variance $σ^2 = 4.6^2$.
 ### 2. Model Structures
-The following parametric models are estimated:
+The following parametric models are estimated:(all models are estimated using the MATLAB System Identification Toolbox)
 - ARX model
 - ARMAX model
 - Output Error (OE) model
-- Box-Jenkins (BJ) model
-All models are estimated using the MATLAB System Identification Toolbox.
+- Box-Jenkins (BJ) model.
 ### 3. Frequency Domain Analysis
 Bode plots are used to compare the true system with the estimated models.
 This allows evaluation of how well each model captures the system dynamics across frequencies.
