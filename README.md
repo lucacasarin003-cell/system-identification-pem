@@ -19,7 +19,7 @@ A dataset of $N = 8000$ samples is generated using a known discrete-time model.
 The input signal is a multi-sine excitation generated using MATLAB `idinput`.
 Noise is modeled as white Gaussian noise with variance $σ^2 = 4.6^2$.
 ### 2. Model Structures
-The following parametric models are estimated:(all models are estimated using the MATLAB System Identification Toolbox)
+The following parametric models are estimated: (all models are estimated using the MATLAB System Identification Toolbox)
 - ARX model
 - ARMAX model
 - Output Error (OE) model
@@ -27,17 +27,6 @@ The following parametric models are estimated:(all models are estimated using th
 ### 3. Frequency Domain Analysis
 Bode plots are used to compare the true system with the estimated models.
 This allows evaluation of how well each model captures the system dynamics across frequencies.
-### 4. Statistical Analysis
-For the ARX model:
-- parameter estimates are extracted
-- asymptotic covariance is computed
-- confidence intervals are derived
-The consistency of the estimated parameters is verified by checking whether the true parameters lie within the estimated confidence intervals.
-## Results
-- ARX ARMAX and BJ include the ARX structure and the actual model is ARX so they provide a good approximation of the true system (Note BJ and ARMAX overparametrized the actual model).
-- We chose the OE model with $n_f = 1$ but the true denominator has degree of 2 so we have a structural bias.
-- Increasing dataset size improves estimation accuracy and reduces variance
-- Confidence interval analysis confirms asymptotic correctness of PEM estimates
 ## Figures
 ### Frequency Response (Bode Plot)
 ### Case 1: large dataset ($N=8000)
@@ -49,7 +38,18 @@ For $N = 8000$ we see that the Bode plots are nearly identical across all 5 runs
 For $N=200$, the Bode plots vary significantly from run to run. This occurs because the small dataset size leads to high estimator variance, making the identification process highly sensitive to the specific realization of noise. The estimation is unreliable because the results are dominated by stochastic noise rather than the system's dynamics.
 ![Bode Plot](figures/Bode_N200_run1.png) 
 ![Bode Plot](figures/Bode_N200_run2.png) 
-![Bode Plot](figures/Bode_N200_run4.png) 
+![Bode Plot](figures/Bode_N200_run4.png)
+### 4. Statistical Analysis
+For the ARX model:
+- parameter estimates are extracted
+- asymptotic covariance is computed
+- confidence intervals are derived
+The consistency of the estimated parameters is verified by checking whether the true parameters lie within the estimated confidence intervals.
+## Results
+- ARX ARMAX and BJ include the ARX structure and the actual model is ARX so they provide a good approximation of the true system (Note BJ and ARMAX overparametrized the actual model).
+- We chose the OE model with $n_f = 1$ but the true denominator has degree of 2 so we have a structural bias.
+- Increasing dataset size improves estimation accuracy and reduces variance
+- Confidence interval analysis confirms asymptotic correctness of PEM estimates 
 ## Tools Used
 - MATLAB
 - System Identification Toolbox
