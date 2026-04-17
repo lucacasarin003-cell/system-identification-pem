@@ -53,3 +53,9 @@ The consistency of the estimated parameters is verified by checking whether the 
 ## Tools Used
 - MATLAB
 - System Identification Toolbox
+## Author
+Group project 
+Contributors:
+- Luca Casarin
+- Alessio Vragnaz Inkid
+- Jacopo Tengner
